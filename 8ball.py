@@ -3,14 +3,16 @@
 import sys
 import random
 
-ans = True
+#ans = True
 
-while ans:
-    question = raw_input ('Ask the magic 8 ball a question: press enter to quit')
-    answers = random.randint(1,8)
-    
-    if question == "":
-        sys.exit()
+answers = input("Entre com um numero de 1 a 8")
+
+#while ans:
+    #question = raw_input ('Ask the magic 8 ball a question: press enter to quit')
+    #answers = random.randint(1,8)
+
+    #if answers == "":
+     #   sys.exit()
     
     elif answers == 1:
         print ('It is certain')

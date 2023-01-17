@@ -1,25 +1,20 @@
-#!/usr/bin/python
-
 import json, requests
 
 response = requests.get("http://jsonplaceholder.typicode.com/comments")
 
-print response.status_code
-
-#print response.content
+#CODE Resultado
+print(response.status_code)
+# print (response.content)
 
 comments = json.loads(response.content)
 
-print comments[0] ['body']
+# Objeto especifico
 
-for comment in comments[0:10]:
-	print comment['name']
+print (comments[0]['body'])
+s = " separador "
+print (s.center(30, '%'))
+print (comments[0]['name'])
+print (s.center(30, '%'))
 
-#Objeto especifico
-
-
-response = requests.get("http://jsonplaceholder.typicode.com/comments")
-
-comment = json.loads (response.content)
-
-print comment[0] ['name']
+# for comment in comments[0:10]:
+#	print comment['name']
