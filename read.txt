@@ -1,1 +1,0 @@
-Ok estou lendo o arquivo para carga no Python!
