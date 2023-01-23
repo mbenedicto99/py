@@ -4,7 +4,7 @@ from collections import Counter
 import matplotlib.pyplot as plt
 
 # reading text file
-text = open("read_nlp.txt", encoding="utf-8").read()
+text = open("read_POR.txt", encoding="utf-8").read()
 
 # converting to lowercase
 lower_case = text.lower()
