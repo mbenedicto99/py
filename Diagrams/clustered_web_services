@@ -1,0 +1,30 @@
+digraph "Clustered Web Services" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Clustered Web Services" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"8e0d3cfbafe04c10b1870755b719212f" [label=dns height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/network\route-53.png" shape=none]
+	"955c39f6e46e4c45919918213ff181f2" [label=elb height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/network\elastic-load-balancing.png" shape=none]
+	"8c9361abbaaa443aa45c2abf8da8191e" -> d8d3bb33e1314b20bb81401b7483bff0 [dir=none fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"8e0d3cfbafe04c10b1870755b719212f" -> "955c39f6e46e4c45919918213ff181f2" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"955c39f6e46e4c45919918213ff181f2" -> b7103cc6fa574eb8ba8197360d4ab043 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"955c39f6e46e4c45919918213ff181f2" -> "3fd99de337384a8daf5aa28e6ea5ec4c" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"955c39f6e46e4c45919918213ff181f2" -> "2345caaafd324deb96d36f880d8c2f33" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b7103cc6fa574eb8ba8197360d4ab043 -> "8c9361abbaaa443aa45c2abf8da8191e" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"3fd99de337384a8daf5aa28e6ea5ec4c" -> "8c9361abbaaa443aa45c2abf8da8191e" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"2345caaafd324deb96d36f880d8c2f33" -> "8c9361abbaaa443aa45c2abf8da8191e" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b7103cc6fa574eb8ba8197360d4ab043 -> fb324d992c6b45c0b58c48872f75d0a8 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"3fd99de337384a8daf5aa28e6ea5ec4c" -> fb324d992c6b45c0b58c48872f75d0a8 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"2345caaafd324deb96d36f880d8c2f33" -> fb324d992c6b45c0b58c48872f75d0a8 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph cluster_Services {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=Services labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		b7103cc6fa574eb8ba8197360d4ab043 [label=web1 height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/compute\elastic-container-service.png" shape=none]
+		"3fd99de337384a8daf5aa28e6ea5ec4c" [label=web2 height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/compute\elastic-container-service.png" shape=none]
+		"2345caaafd324deb96d36f880d8c2f33" [label=web3 height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/compute\elastic-container-service.png" shape=none]
+		subgraph "cluster_DB Cluster" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="DB Cluster" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"8c9361abbaaa443aa45c2abf8da8191e" [label=useradd height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/database\rds.png" shape=none]
+			d8d3bb33e1314b20bb81401b7483bff0 [label="userdb ro" height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/database\rds.png" shape=none]
+		}
+		fb324d992c6b45c0b58c48872f75d0a8 [label=memcached height=1.9 image="C:\Users\mabenedi\IdeaProjects\Python4DataScience\venv\lib\site-packages\resources/aws/database\elasticache.png" shape=none]
+	}
+}
