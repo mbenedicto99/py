@@ -4,6 +4,7 @@ from torchvision import models
 from PIL import Image
 
 # 1. Carregar e preparar a imagem
+# ResNet18, que é uma rede neural convolucional treinada no ImageNet (com 1000 classes).
 transform = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
