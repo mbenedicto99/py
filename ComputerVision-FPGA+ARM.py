@@ -15,6 +15,9 @@ Os pesos 𝑊W são fixos, como os valores de condutância dos memristores.
 O script mostra como aplicar uma entrada vetorial 𝑋
 X a uma rede neural com uma camada oculta."""
 
+#pip install cupy-cuda12x  # x depende da sua versão CUDA
+#import cupy as cp #Otimizado para GPU
+
 import numpy as np
 
 # --- Funções auxiliares ---
